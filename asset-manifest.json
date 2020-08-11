@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/robobook/static/css/main.0b8baf75.chunk.css",
+    "main.js": "/robobook/static/js/main.68c07a99.chunk.js",
+    "main.js.map": "/robobook/static/js/main.68c07a99.chunk.js.map",
+    "runtime-main.js": "/robobook/static/js/runtime-main.6cdd9c70.js",
+    "runtime-main.js.map": "/robobook/static/js/runtime-main.6cdd9c70.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/robobook/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.f7cb7955.chunk.js": "/robobook/static/js/2.f7cb7955.chunk.js",
+    "static/js/2.f7cb7955.chunk.js.map": "/robobook/static/js/2.f7cb7955.chunk.js.map",
+    "index.html": "/robobook/index.html",
+    "precache-manifest.e6621e89e69f5f6242f8755f1eef7ed6.js": "/robobook/precache-manifest.e6621e89e69f5f6242f8755f1eef7ed6.js",
+    "service-worker.js": "/robobook/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/robobook/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.0b8baf75.chunk.css.map": "/robobook/static/css/main.0b8baf75.chunk.css.map",
+    "static/js/2.f7cb7955.chunk.js.LICENSE.txt": "/robobook/static/js/2.f7cb7955.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/robobook/static/media/joystix.282fa349.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cdd9c70.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.f7cb7955.chunk.js",
+    "static/css/main.0b8baf75.chunk.css",
+    "static/js/main.68c07a99.chunk.js"
+  ]
+}
