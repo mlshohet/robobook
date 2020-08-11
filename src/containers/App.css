@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'joystix';
+	font-style: normal;
+	font-weight: normal;
+	src: local('joystix'), url('./joystix.ttf') format('ttf');
+}
+
+h1 {
+	font-family: 'joystix';
+	color: rgb(5, 255, 189);
+}
