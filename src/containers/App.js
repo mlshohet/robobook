@@ -67,9 +67,7 @@ class App extends React.Component {
 				<h1 className='tc f1'>ROBOBOOK</h1>
 				<SearchBox searchChange = {onSearchChange} />
 				<Scroll>
-					<ErrorBoundary>
 						<CardList robots= {filteredRobots} />
-					</ErrorBoundary>
 				</Scroll>
 			</div>
 			);
