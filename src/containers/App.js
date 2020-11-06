@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
+import ErrorBoundary from '../components/ErrorBoundary';
 import './App.css';
 
 // Importing the actions for redux
@@ -66,7 +67,9 @@ class App extends React.Component {
 				<h1 className='tc f1'>ROBOBOOK</h1>
 				<SearchBox searchChange = {onSearchChange} />
 				<Scroll>
-					<CardList robots= {filteredRobots} />
+					<ErrorBoundary>
+						<CardList robots= {filteredRobots} />
+					</ErrorBoundary>
 				</Scroll>
 			</div>
 			);
