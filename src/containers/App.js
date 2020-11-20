@@ -8,6 +8,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Clock from '../components/Clock';
 import './App.css';
 
 // Importing the actions for redux
@@ -38,9 +39,9 @@ const mapStateToProps = state => {
 // Property is the prop that that the dispatch receives
 // value is a function that listens for input (in this case)
 // Returns an Object that contains all of the action
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
 	return {
-		onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+		onSearchChange: event => dispatch(setSearchField(event.target.value)),
 		// returns the specific reducer function that has a dispatch
 		onRequestRobots: () => dispatch(requestRobots())
 	}
@@ -48,10 +49,25 @@ const mapDispatchToProps = (dispatch) => {
 
 class App extends React.Component {
 
+	constructor() {
+		super();
+		this.state = {
+			clock: ''
+		}
+	}
+
 //No constructor. All data received as props from redux
 
 	componentDidMount() {
 		this.props.onRequestRobots();
+		fetch('http://worldtimeapi.org/api/ip')
+		.then(response => {
+			return response.json();
+		})
+		.then(clock => {
+			const datetime = clock.datetime;
+			this.setState({ clock: datetime })
+		});
 	}
 
 	render() {
@@ -66,9 +82,12 @@ class App extends React.Component {
 			<div className = 'tc'>
 				<h1 className='tc f1'>ROBOBOOK</h1>
 				<SearchBox searchChange = {onSearchChange} />
-				<Scroll>
+				<ErrorBoundary>
+					<Scroll>
 						<CardList robots= {filteredRobots} />
-				</Scroll>
+					</Scroll>
+				</ErrorBoundary>
+				<Clock clock={this.state.clock}/>
 			</div>
 			);
 	}

@@ -30,7 +30,7 @@ export const searchRobots = (state=initialState, action={}) => {
 		// action is an object with payload as property
 		// Standard Redux syntax
 		// Third parameter is the state object
-			return Object.assign({}, state, { searchField : action.payload });
+			return { ...state, searchField : action.payload }
 		default:
 			return state;
 	}
