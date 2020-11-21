@@ -34,7 +34,7 @@ const logger = createLogger();
 // Add all reducers here (COMBINE into root reducer)
 
 const rootReducer = combineReducers( { searchRobots, requestRobots });
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware,logger));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 
  // This is how the react-redux Provider passes down the store, not the App
