@@ -61,13 +61,13 @@ class App extends React.Component {
 
 	componentDidMount() {
 		this.props.onRequestRobots();
-		fetch('http://worldtimeapi.org/api/ip')
-		.then(response => {
-			return response.json();
-		})
+		return fetch('https://worldtimeapi.org/api/ip')
+		.then(response => response.json())
 		.then(clock => {
 			const datetime = clock.datetime;
 			this.setState({ clock: datetime })
+		}).catch(error => {
+			console.log(error);
 		});
 	}
 
