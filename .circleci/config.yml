@@ -26,12 +26,12 @@ jobs:
           command: |
             echo 'Hello World Too!'
             echo 'This is the second delivery pipeline'   
-    workflows:
-      version: 2.1
-      bobby_sally:
-        jobs:
-          - bobby
-          - sally
+workflows:
+  version: 2.1
+  bobby_sally:
+    jobs:
+      - bobby
+      - sally  
 
 
 
