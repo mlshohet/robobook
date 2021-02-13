@@ -19,19 +19,19 @@ class MainPage extends React.Component {
 	componentDidMount() {
 		this.props.onRequestRobots();
 		return fetch('https://worldtimeapi.org/api/ip')
-		.then(response => response.json())
-		.then(clock => {
-			const datetime = clock.datetime;
-			this.setState({ clock: datetime })
-		}).catch(error => {
-			console.log(error);
-		});
+			.then(response => response.json())
+			.then(clock => {
+				const datetime = clock.datetime;
+				this.setState({ clock: datetime })
+			}).catch(error => {
+				console.log(error);
+			});
 	}
 
 	filteredRobots = () => {
-		return this.props.robots.filter(robot => {
-			return robot.name.toLowerCase().includes(this.props.searchField.toLowerCase());
-		});
+		return this.props.robots.filter(robot =>
+			robot.name.toLowerCase().includes(this.props.searchField.toLowerCase())
+		);
 	}
 	
 

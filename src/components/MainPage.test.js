@@ -1,20 +1,20 @@
-import React from 'react';
 import { shallow } from 'enzyme';
+import React from 'react';
 import MainPage from './MainPage';
 
 let wrapper;
 
-beforeEach(() => {
+beforeEach(() => {  //comes with Jest, runs before each test
 	const mockProps = {
 		onRequestRobots: jest.fn(),
 		robots: [],
 		searchField: '',
 		isPending: false
 	}
-	wrapper = shallow(<MainPage { ...mockProps }/>);
+	wrapper = shallow(<MainPage {...mockProps}/>)
 });
 
-it('renders MainPage without crashing', () => {
+it('renders mainPage', () => {
 	expect(wrapper).toMatchSnapshot();
 });
 
@@ -24,16 +24,26 @@ it('filters robots correctly', () => {
 		robots: [{
 			id: 3,
 			name: 'John',
-			email: 'john@gmail.com'
+			email: 'john@mail.com'
 		}],
-		searchField: 'j',
+		searchField: 'o',
 		isPending: false
 	}
 
-	const wrapper2 = shallow(<MainPage { ...mockProps2 }/>);
-	expect(wrapper2.instance().filteredRobots()).toEqual([{
+	const wrapper2 = shallow(<MainPage {...mockProps2}/>)
+
+
+	expect(wrapper2.instance().filteredRobots([])) // instance comes with enzyme
+		.toEqual(
+			[{
 			id: 3,
 			name: 'John',
-			email: 'john@gmail.com'
-		}]);
+			email: 'john@mail.com'
+		}]
+		);
+
+	// expect(wrapper2.instance().filteredRobots([]))
+	// 	.toEqual([])
 });
+
+
